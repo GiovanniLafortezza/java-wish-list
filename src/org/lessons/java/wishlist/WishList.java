@@ -9,7 +9,6 @@ public class WishList {
 
         //creiamo la lista di regali vuota
         HashSet<String> wishList = new HashSet<>();
-        System.out.println(wishList.size());
 
         boolean stop = false;
         //chiediamo all'utente di inserire un regalo alla volta
@@ -22,6 +21,7 @@ public class WishList {
                     System.out.println("Nome regalo: ");
                     String gift = scanner.nextLine();
                     boolean added = wishList.add(gift);
+                    System.out.println("Lista regali: " + wishList.size());
                     //se il regalo è già stato aggiunto
                     if(!added) {
                         System.out.println("Mi dispiace ma questo è già stato inserito");
@@ -39,6 +39,14 @@ public class WishList {
 
             }
         }
+
+        System.out.println("Elenco regali:");
+        for(String element: wishList){
+            System.out.println(element.toUpperCase());
+        }
+
+        scanner.close();
+
 
     }
 }
